@@ -12,15 +12,20 @@ let nameCapitalized = firstName.charAt(0).toUpperCase() + firstName.slice(1);
 //puts messages into an array
 let messageArray = [`${nameCapitalized}, wear a warm coat, hat, scarf, and gloves.`, `${nameCapitalized}, wear a warm coat, but you won't need a hat, scarf or gloves.`, `${nameCapitalized}, wear your warmest coat, a warm hat, a scarf, and warm gloves.`, `${nameCapitalized}, wear a warm coat, hat, and gloves. Maybe a scarf too.`]
 
-//output of messages with if-else
-if (upperState == "NE" && userTemp < '32') {
+//output of messages with switch
+switch(true) {
+  case (upperState == "NE" && userTemp < '32') :
     NSB.MsgBox(messageArray[0])
-} else if (upperState == "NE" && '32' < userTemp && userTemp < '50') {
+    break
+  case (upperState == "NE" && '32' < userTemp && userTemp < '50') :
     NSB.MsgBox(messageArray[1])
-} else if (upperState == "FL" && '32' < userTemp && userTemp < '50') {
+    break
+  case (upperState == "FL" && '32' < userTemp && userTemp < '50') :
     NSB.MsgBox(messageArray[2])
-} else if (upperState == "FL" && '50' < userTemp && userTemp < '70') {
+    break
+  case (upperState == "FL" && '50' < userTemp && userTemp < '70') :
     NSB.MsgBox(messageArray[3])
-} else {
+    break
+  default :
     NSB.MsgBox("Please retry!")
 }
